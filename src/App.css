@@ -1,0 +1,273 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  background-color: #2c1810;
+  color: #e8d5c4;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* App Layout */
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #2c1810 0%, #1a1010 100%);
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid #8B4513;
+}
+
+.app-title {
+  margin: 0;
+  color: #D4AF37;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.app-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-button {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+  color: #e8d5c4;
+  border: 1px solid #CD853F;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+  background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav-button.active {
+  background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+  color: #2c1810;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.app-main {
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Three-pane layout */
+.three-pane-layout {
+  display: grid;
+  grid-template-columns: 300px 400px 1fr;
+  height: 100%;
+}
+
+.filter-panel {
+  background: rgba(0, 0, 0, 0.2);
+  border-right: 1px solid #8B4513;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.quest-list-panel {
+  background: rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #8B4513;
+  overflow-y: auto;
+}
+
+.quest-detail-panel {
+  background: rgba(139, 69, 19, 0.05);
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+/* Loading screen */
+.loading-screen {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2c1810 0%, #1a1010 100%);
+  color: #e8d5c4;
+}
+
+.loading-content {
+  text-align: center;
+}
+
+.loading-content h1 {
+  color: #D4AF37;
+  margin-bottom: 1rem;
+}
+
+/* Settings view */
+.settings-view {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* No quest selected */
+.no-quest-selected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #8B4513;
+  font-style: italic;
+}
+
+/* Quest cards basic styling */
+.quest-card {
+  background: rgba(139, 69, 19, 0.1);
+  border: 1px solid #8B4513;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quest-card:hover {
+  background: rgba(139, 69, 19, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.quest-card.selected {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: #D4AF37;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+}
+
+.quest-card.pinned {
+  border-color: #D4AF37;
+  background: rgba(212, 175, 55, 0.05);
+}
+
+/* Filter panel styling */
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.filter-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  color: #D4AF37;
+  font-size: 1.1rem;
+}
+
+.clear-filters-btn {
+  padding: 0.25rem 0.5rem;
+  background: #8B4513;
+  color: #e8d5c4;
+  border: none;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.filter-section {
+  margin-bottom: 1.5rem;
+}
+
+.filter-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.5rem 0;
+  color: #CD853F;
+  font-size: 0.9rem;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #8B4513;
+  border-radius: 4px;
+}
+
+.search-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #e8d5c4;
+  outline: none;
+}
+
+.search-box input::placeholder {
+  color: #8B4513;
+}
+
+.filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  cursor: pointer;
+}
+
+.state-badge,
+.tag-badge {
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.state-badge.state-open {
+  background: #228B22;
+}
+
+.state-badge.state-completed {
+  background: #4169E1;
+}
+
+.state-badge.state-archived {
+  background: #8B0000;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .three-pane-layout {
+    grid-template-columns: 250px 350px 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .three-pane-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+  }
+  
+  .filter-panel,
+  .quest-list-panel {
+    max-height: 200px;
+  }
+}
