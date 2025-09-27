@@ -74,11 +74,12 @@ body {
   overflow: hidden;
 }
 
-/* Three-pane layout */
+/* Two-pane layout like Skyrim */
 .three-pane-layout {
   display: grid;
-  grid-template-columns: 300px 400px 1fr;
-  height: 100%;
+  grid-template-columns: 280px 1fr;
+  height: calc(100vh - 80px);
+  position: relative;
 }
 
 .filter-panel {
